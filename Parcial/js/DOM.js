@@ -148,7 +148,7 @@ function filtrarDatosChecks(arr)//Escondo todo y luego muestro lo que viene en a
     });
 }
 //*********************ABM */
-function alta(anuncio,data)
+/*function alta(anuncio,data)
 {
     let propiedades = tratarDatos(data);
     //data= array de objetos
@@ -182,8 +182,8 @@ function modificacion(anuncio,data)
     let propiedades = baja(anuncio,data);
     propiedades.push(anuncio);
     return propiedades;
-}
+}*/
 export{filtrarSelectAnimales,calcularProm,filtroDeSelect,
     traerCheckeados,filtrarDatosChecks
-    ,alta,baja,modificacion,generarId
+    /*,alta,baja,modificacion,generarId*/
 ,cargarSelectAnimales};

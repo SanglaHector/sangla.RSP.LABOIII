@@ -1,8 +1,12 @@
 import {traerCheckeados,tildarChecks, tratarDatos} from './funciones.js';
-import {alta,baja,modificacion,cargarSelectAnimales,generarId} from './DOM.js';
+//import {/*alta,baja,modificacion,*/cargarSelectAnimales/*,generarId*/} from './DOM.js';
+import {cargarSelectAnimales} from './DOM.js';
+import {alta,baja,modificacion,generarId} from '../dist/DataAccess.js';
 import {Data} from './data.js';
+import {cargarChart} from './chart.js';
 function inicializarManejadores()
 {
+    cargarChart()
     cargarSelectAnimales();
     let checks = traerCheckeados();
     let objChecks = {

@@ -1,6 +1,7 @@
 //import{AnuncioMascota} from './anuncioMascota.js'
 import{AnuncioMascota} from '../dist/anuncioMascota.js'
 import {transaccionDeServer,precioDeServer,precioDeForm} from './formateo.js';
+import {cargarClicks} from './chart.js';
 
 //********************** TRATAR DATOS ****************************************************//
 function tratarDatos(datos)
@@ -23,7 +24,8 @@ function armarTabla(objetos)
     let body = document.getElementById("body");
     objetos.forEach(element => {
         let tr = document.createElement('tr');
-        tr.addEventListener('dblclick', cargarElemento)
+        tr.addEventListener('dblclick', cargarElemento);
+  //      tr.addEventListener('dblclick', cargarClicks);
         body.appendChild(tr);
         tr.appendChild(fnNewTD(element.id));
         tr.appendChild(fnNewTD(element.titulo));
@@ -37,6 +39,7 @@ function armarTabla(objetos)
 }
 function cargarElemento(obj)
 {
+    
     let propiedad = obj.srcElement.parentNode;//me traigo el elemento seleccionado
     let start = propiedad.firstElementChild;//el primer objetos de ese hijo
     let aux = start;
@@ -80,6 +83,7 @@ function cargarElemento(obj)
             aux = aux.nextElementSibling;
         }
     });
+    cargarClicks();
     /*console.log(start);//este es el td
     console.log(start.firstChild);//este el objeto dentro del td
     console.log(start.firstChild.nodeValue);*///el valor dento del objeto del td
